@@ -1,18 +1,29 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
+
+func isLeap(year int) bool {
+	return (year%400 == 0) || (year%4 == 0 && year%100 != 0)
+}
 
 func main() {
 	var d, m, y int
 	fmt.Print("Введите дату (день месяц год): ")
 	fmt.Scan(&d, &m, &y)
 
-	t := time.Date(y, time.Month(m), d, 0, 0, 0, 0, time.UTC)
+	daysInMonth := map[int]int{
+		1: 31, 2: 28, 3: 31, 4: 30,
+		5: 31, 6: 30, 7: 31, 8: 31,
+		9: 30, 10: 31, 11: 30, 12: 31,
+	}
 
-	valid := (t.Day() == d && int(t.Month()) == m && t.Year() == y)
-	fmt.Print("true - дата корректна, false - некорректна")
-	fmt.Println(valid)
+	if isLeap(y) {
+		daysInMonth[2] = 29
+	}
+
+	if m < 1 || m > 12 || d < 1 || d > daysInMonth[m] {
+		fmt.Println(false)
+	} else {
+		fmt.Println(true)
+	}
 }
