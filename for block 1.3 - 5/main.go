@@ -1,3 +1,6 @@
+/*
+Вычислить x^n
+*/
 package main
 
 import "fmt"
