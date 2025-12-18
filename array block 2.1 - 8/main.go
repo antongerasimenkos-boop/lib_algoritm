@@ -10,8 +10,10 @@ import (
 
 func main() {
 	var n int
+	fmt.Println("Введите длину массива")
 	fmt.Scan(&n)
 
+	fmt.Println("Введите числа массива")
 	a := make([]int, n)
 	for i := 0; i < n; i++ {
 		fmt.Scan(&a[i])

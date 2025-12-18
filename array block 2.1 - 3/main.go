@@ -16,9 +16,11 @@ func expand(a []int, left, right int) (int, int) {
 
 func main() {
 	var n int
+	fmt.Println("Введите длину массива")
 	fmt.Scan(&n)
 
 	a := make([]int, n)
+	fmt.Println("Введите числа массива")
 	for i := 0; i < n; i++ {
 		fmt.Scan(&a[i])
 	}

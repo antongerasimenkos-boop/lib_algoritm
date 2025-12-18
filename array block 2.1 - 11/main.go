@@ -8,15 +8,18 @@ import "fmt"
 
 func main() {
 	var n, m int
+	fmt.Println("Введите длину массива")
 	fmt.Scan(&n)
 
 	a := make([]int, n)
+	fmt.Println("Введите числа массива")
 	for i := 0; i < n; i++ {
 		fmt.Scan(&a[i])
 	}
-
+	fmt.Println("Введите длину 2 массива")
 	fmt.Scan(&m)
 	b := make([]int, m)
+	fmt.Println("Введите числа 2 массива")
 	for i := 0; i < m; i++ {
 		fmt.Scan(&b[i])
 	}
